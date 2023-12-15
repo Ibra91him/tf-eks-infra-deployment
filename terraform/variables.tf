@@ -13,5 +13,5 @@ variable "clusterName" {
 variable "vpcName" {
   description = "Name of the VPC"
   type        = string
-  default     = "demo-eks-vpc-tf-01"
+  default     = "demo-eks-vpc-tf-02"
 }
