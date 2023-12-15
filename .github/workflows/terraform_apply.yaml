@@ -1,11 +1,12 @@
 name: "Infra Deployment - EKS"
 on:
-  workflow_dispatch:
-  # push:
-  #   branches:
-  #     - main
-  #   paths:
-  #     - terraform/**
+  # workflow_dispatch:
+  push:
+    branches:
+      - main
+      - dev
+    paths:
+      - terraform/**
   # pull_request:
   #   branches:
   #     - main
