@@ -27,9 +27,9 @@ terraform {
   }
 
   backend "s3" {
-    bucket = "demo-eks-tf-bucket"
+    bucket = "demo-eks-tf-s3"
     key    = "terraform.tfstate"
-    region = "us-west-1"
+    region = "us-west-2"
   }
 
   required_version = "~> 1.6.3"
