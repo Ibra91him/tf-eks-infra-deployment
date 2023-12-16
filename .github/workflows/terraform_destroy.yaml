@@ -55,7 +55,7 @@ jobs:
       #Apply TF code
       - name: Terraform Destroy
         id: destroy
-        if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+        ##if: github.ref == 'refs/heads/main' && github.event_name == 'push'
         run: terraform destroy -auto-approve -input=false -parallelism=1 planfile
 
       - name: Configure AWS credentials
