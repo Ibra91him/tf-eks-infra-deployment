@@ -42,9 +42,10 @@ Ensure you have the following prerequisites before deploying the EKS cluster:
     ```
 
 3.  **Switch to the "dev" branch:**
-        ```bash
-    git checkout dev
-    ```
+    
+     ``` bash
+     git checkout dev
+     ```
 
 6. **Navigate to the project directory:**
 
@@ -87,12 +88,13 @@ Note: the workflow will trigger on pushing to the dev branch as specified in the
     **Note: review the plan to make sure everything looks good**
 
 12. **Go back to your terminal and run switch back to the main branch, and run the following commands to merge your dev branch on main**
-        ```bash
+    
+    ```bash
     git checkout main
     git merge dev
     git push origin main
     ```
-13. **In your GitHub repository, navigate to the "Actions" tab and you should see that the "Infra Deployment - EKS" has triggered. "The terraform apply stage is going to be applied this time around", monitor the output and you can also check your aws console**
+14. **In your GitHub repository, navigate to the "Actions" tab and you should see that the "Infra Deployment - EKS" has triggered. "The terraform apply stage is going to be applied this time around", monitor the output and you can also check your aws console**
 
 ## Accessing the EKS Cluster
 
