@@ -41,25 +41,24 @@ Ensure you have the following prerequisites before deploying the EKS cluster:
     git clone https://github.com/yourusername/tf-eks-infrastructure.git
     ```
 
-3. **Create and switch to a new branch (e.g., dev) on your local machine:**
-
-    ```bash
-    git checkout -b dev
+3.  **Switch to the "dev" branch:**
+        ```bash
+    git checkout dev
     ```
 
-4. **Navigate to the project directory:**
+6. **Navigate to the project directory:**
 
     ```bash
     cd terraform
     ```
 
-5. **Make necessary changes in the `variables.tf` file for your dev environment:**
+7. **Make necessary changes in the `variables.tf` file for your dev environment:**
     - Update `clusterName` with your desired EKS cluster name.
     - Update `region` with your preferred AWS region.
     - Update `vpcName` with your desired vpc name.
 
 
-6. **Also, make necessary changes in the ".github/workflows/terraform_apply.yaml" file:**
+8. **Also, make necessary changes in the ".github/workflows/terraform_apply.yaml" file:**
 
 
     ```yaml
@@ -68,26 +67,32 @@ Ensure you have the following prerequisites before deploying the EKS cluster:
       EKS_CLUSTER: <your-eks-cluster-name>
     ```
 
-
-
-7. **Commit your changes:**
+9. **Commit your changes:**
 
     ```bash
     git add variables.tf
     git commit -m "Update variables for dev environment"
     ```
 
-8. **Push the changes to the dev branch on GitHub:**
+10. **Push the changes to the dev branch on GitHub:**
 
     ```bash
     git push origin dev
     ```
+Note: the workflow will trigger on pushing to the dev branch as specified in the terrafrom_apply.yaml file. 
 
-9. **Create a Pull Request (PR) from the dev branch to the main branch in the GitHub repository. Ensure that the changes are reviewed and approved.**
 
-    **Note: If needed, you can bypass the approval process by force merging the changes. To force merge, click on "Merge pull request" and select the "Allow force merge" option.**
+11. **In your GitHub repository, navigate to the "Actions" tab and you should see that the "Infra Deployment - EKS" has triggered. "It will only run a terraform plan at this point"
 
-10. **Once the PR is approved (or force merged), monitor the GitHub Actions workflow in your repository for the automated EKS cluster deployment.**
+    **Note: review the plan to make sure everything looks good**
+
+12. **Go back to your terminal and run switch back to the main branch, and run the following commands to merge your dev branch on main**
+        ```bash
+    git checkout main
+    git merge dev
+    git push origin main
+    ```
+13. **In your GitHub repository, navigate to the "Actions" tab and you should see that the "Infra Deployment - EKS" has triggered. "The terraform apply stage is going to be applied this time around", monitor the output and you can also check your aws console**
 
 ## Accessing the EKS Cluster
 
