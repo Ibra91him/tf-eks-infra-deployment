@@ -38,7 +38,7 @@ Ensure you have the following prerequisites before deploying the EKS cluster:
 2.  **Clone this repository to your local machine:**
 
     ```bash
-    git clone https://github.com/yourusername/tf-eks-infrastructure.git
+    git clone https://github.com/yourusername/tf-eks-infra-deployment.git
     ```
 
 3.  **Switch to the "dev" branch:**
